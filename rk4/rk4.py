@@ -3,61 +3,43 @@
 import numpy as np 
 import matplotlib.pyplot as plt
 
-# Sea la ecuación diferencial: 
 
 def f(t,y):
-    return y
-# (esta ecuación va a cambiar para cada problema)
-# ahora es y(t) = y0 e^t
+    return np.cos(t)
 
-
-y0 = 1 
-t0 = 0 
-h = 0.05 
+y0 = 0
+t0 = 0
+h = 0.5
 n = 100
 
-# Método general 
 
 def rk4(f, y0, t0, h, n):
-    y_actual = y0
-    t_actual = t0
-    y = []
-    t = []   
+    t = np.zeros(n+1)
+    y = np.zeros(n+1)
+    y[0] = y0
+    t[0] = t0
     for paso in range(n):
 
-        k1 = f(t_actual,y_actual)
-        k2 = f(t_actual + (h/2), y_actual + (k1 * h/2))
-        k3 = f(t_actual + (h/2), y_actual + (k2 * h/2))
-        k4 = f(t_actual + h, y_actual + (k3 * h))
+        k1 = f(t[paso],y[paso])
+        k2 = f(t[paso] + (h/2), y[paso] + (k1 * h/2))
+        k3 = f(t[paso] + (h/2), y[paso] + (k2 * h/2))
+        k4 = f(t[paso] + h, y[paso] + (k3 * h))
 
         k =(k1+2*k2+2*k3+k4)/6
         
-        y_actual = y_actual + h * k
-        t_actual = t_actual + h
-
-        y.append(y_actual)
-        t.append(t_actual)
+        y[paso+1] = y[paso] + h * k
+        t[paso+1] = t[paso] + h
     return t , y 
 
 t, y = rk4(f,y0,t0,h,n)
+t_exacto = np.linspace(t[0], t[-1], 1000)
 
-t = np.array(t)
-y = np.array(y)
-
-
-y_exacto = y0 * np.exp(t)
-
-fig, ax = plt.subplots(1, 2)
-
-ax[0].plot(t, y, color='black')
-ax[0].plot(t, y_exacto, color='red')
-ax[0].set_title('RK4')
-ax[0].grid()
-
-error = np.abs(y - y_exacto)
-ax[1].plot(t, error)
-ax[1].set_title('Error RK4')
-ax[1].grid()
+plt.figure()
 
 
+plt.plot(t_exacto, np.sin(t_exacto), label='Solución Exacta', color='red')
+plt.plot(t, y, label='Aproximación RK4', color='blue',linestyle='--')
+
+plt.grid(True)
+plt.legend()
 plt.show()
