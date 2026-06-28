@@ -22,4 +22,7 @@ Aplicar el descenso de gradiente de machine learning para encontrar parámetros 
 ![Descenso de gradiente](images/descenso.gif)
 
 
+
+
+
 ... 🚧 under construction ...
