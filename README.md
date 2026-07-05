@@ -19,10 +19,7 @@ Definiendo la función RK4 se resuelve:
 
 Aplicar el descenso de gradiente de machine learning para encontrar parámetros de un ajuste lineal y = a*x+b.
 
+
 ![Descenso de gradiente](images/descenso.gif)
 
 
-
-
-
-... 🚧 under construction ...
