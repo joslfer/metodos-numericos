@@ -28,8 +28,8 @@ R0_vals = [0.8,1.5,2.5,4.0]
 
 s_vals = np.linspace(0,N,20)
 i_vals = np.linspace(0,N,20)
-SS, II = np.meshgrid(s_vals, i_vals)
 
+SS, II = np.meshgrid(s_vals, i_vals)
 dS = -a*SS*II/N
 dI = a*SS*II/N-b*II
 

@@ -14,6 +14,10 @@ Definiendo la función RK4 se resuelve:
 
 ![Simulación SIR](images/sir.png)
 
+![Enfriamiento de Newton](images/enfriamiento.png)
+
+- La ecuación diferencial dT/dt = -k(T-S) es un decaimiento exponencial. Tiene como solución analítica: T(t) = S_0 + C*e^(-kt). 
+Podría modelar la temperatura de un cazo con agua muy caliente en una habitación a temperatura ambiente. 
 
 ## Descenso de gradiente
 
