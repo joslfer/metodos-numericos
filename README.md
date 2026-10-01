@@ -17,7 +17,11 @@ Definiendo la función RK4 se resuelve:
 
 ![Modelo de Malthus](images/malthusmodel.png)
 
-- La ecuación del modelo de malthus es: dP/dt = kP. El crecimiento de la población es proporcional a k, la diferencia entre la tasa de nacimientos y la de muertes. Si k es positivo entonces la población explota. Este modelo de población no tiene en cuenta recursos, por eso no es realista. La solución es una ecuación exponencial P(t) = C_0 * e^(kt)
+- La ecuación del modelo de malthus es: dP/dt = kP. El crecimiento de la población es proporcional a k, la diferencia entre la tasa de nacimientos y la de muertes. Si k es positivo entonces la población explota. Este modelo de población no tiene en cuenta recursos, por eso no es realista. La solución es una ecuación exponencial P(t) = C_0 * e^(kt).
+
+![Modelo Logístico](images/logisticmodel.png)
+
+- La ecuación logística modela una población pero con un límite de recursos. dP/dt = r(M-P)P. En el modelo se ve que la población tiende a establiziarse en el M cuando t tiende a infinito. La solución analítica es: P(t) = P0*M0 / P0+(M-P0)*e^-rMt. [más sobre esta función](https://youtu.be/aP4YXOo-Uko?si=AbKSS1LU2g7r6ETC)
 
 ![Enfriamiento de Newton](images/enfriamiento.png)
 
